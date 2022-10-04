@@ -34,8 +34,8 @@ pipeline {
         sh '''#!/bin/bash
         git clone https://github.com/kura-labs-org/kuralabs_deployment_2.git
         cd ./kuralabs_deployment_2
-        pip install -r requirements.txt
-        export FLASK_APP=application
+        sudo pip install -r requirements.txt
+        sudo export FLASK_APP=application
         sudo python3 -m flask run --host=0.0.0.0 --port=80 &
         '''
       }
