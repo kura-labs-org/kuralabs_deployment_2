@@ -36,7 +36,7 @@ pipeline {
         cd ./kuralabs_deployment_2
         pip install -r requirements.txt
         export FLASK_APP=application
-        python3 -m flask run --host=0.0.0.0 --port=80 &
+        sudo python3 -m flask run --host=0.0.0.0 --port=80 &
         '''
       }
     } 
