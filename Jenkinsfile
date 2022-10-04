@@ -39,7 +39,7 @@ pipeline {
         source test3/bin/activate
         pip install pip --upgrade
         export FLASK_APP=application
-        flask run --host=0.0.0.0 &
+        nohup flask run --host=0.0.0.0 &
         '''
       }
     } 
