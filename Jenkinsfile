@@ -28,8 +28,8 @@ pipeline {
        
       }
     }
+    agent {label 'awsDeploy'}
     stage ('Deploy') {
-      agent {label 'awsDeploy'}
       steps {
         sh '''#!/bin/bash
         git clone https://github.com/kura-labs-org/kuralabs_deployment_2.git
