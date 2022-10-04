@@ -35,8 +35,11 @@ pipeline {
         git clone https://github.com/kura-labs-org/kuralabs_deployment_2.git
         cd ./kuralabs_deployment_2
         sudo pip install -r requirements.txt
+        python3 -m venv test3
+        source test3/bin/activate
+        pip install pip --upgrade
         export FLASK_APP=application
-        sudo python3 -m flask run --host=0.0.0.0 --port=80
+        flask run --host=0.0.0.0 
         '''
       }
     } 
