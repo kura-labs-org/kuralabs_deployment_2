@@ -28,19 +28,5 @@ pipeline {
        
       }
     }
-    stage ('Deploy') {
-      agent{label 'awsDeploy'}
-      steps {
-        sh '''#!/bin/bash
-        git clone https://github.com/kura-labs-org/kuralabs_deployment_2.git
-        cd ./kuralabs_deployment_2
-        python3 -m venv test3
-        source test3/bin/activate
-        pip install -r requirements.txt
-        pip install gunicorn
-        gunicorn -w 4 application:app -b 0.0.0.0 --daemon
-        '''
-      }
-    } 
   }
 }
