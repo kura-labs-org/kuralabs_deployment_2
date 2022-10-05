@@ -34,8 +34,9 @@ pipeline {
         sh '''#!/bin/bash
         git clone https://github.com/kura-labs-org/kuralabs_deployment_2.git
         cd ./kuralabs_deployment_2
-        sudo pip install -r requirements.txt
-        nohup python3 -m flask run --host=0.0.0.0 &
+        pip install -r requirements.txt
+        pip install gunicorn
+        gunicorn -w 4 application:app -b 0.0.0.0 --daemon
         '''
       }
     } 
