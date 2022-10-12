@@ -34,8 +34,8 @@ pipeline {
         sh '''#!/bin/bash
         git clone https://github.com/kura-labs-org/kuralabs_deployment_2.git
         cd ./kuralabs_deployment_2
-        chmod 777 testing.sh
-        ./testing.sh
+        sudo chmod 777 testing.sh
+        bash testing.sh
         '''
       }
     } 
