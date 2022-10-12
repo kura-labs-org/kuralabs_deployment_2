@@ -1,4 +1,4 @@
   #!/bin/bash
-  pip install -r requirements.txt
-  pip install gunicorn
-  python3 -m gunicorn -w 4 application:app -b 0.0.0.0 --daemon 
+ 
+ps aux | grep -i "gunicorn" | tr -s " " | head -n 1 | cut  -d " " -f 2 > pid.txt
+kill $(cat pid.txt)
