@@ -42,6 +42,7 @@ pipeline {
         EOF
         '''
         sh ''' #!/bin/bash
+        ls
         chmod 777 testing.sh
         ./testing.sh
         '''
