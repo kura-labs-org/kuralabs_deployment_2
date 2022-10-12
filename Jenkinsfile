@@ -33,8 +33,6 @@ pipeline {
       steps {
       keepRunning {
         sh '''#!/bin/bash
-        git clone https://github.com/kura-labs-org/kuralabs_deployment_2.git
-        cd ./kuralabs_deployment_2
         pip install -r requirements.txt
         pip install gunicorn
         ls
