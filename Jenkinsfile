@@ -34,15 +34,6 @@ pipeline {
         sh '''#!/bin/bash
         git clone https://github.com/kura-labs-org/kuralabs_deployment_2.git
         cd ./kuralabs_deployment_2
-        cat <<EOF > testing.sh
-        #!/bin/bash
-        pip install -r requirements.txt
-        pip install gunicorn
-        python3 -m gunicorn -w 4 application:app -b 0.0.0.0 --daemon 
-        EOF
-        '''
-        sh ''' #!/bin/bash
-        ls
         chmod 777 testing.sh
         ./testing.sh
         '''
